@@ -2,6 +2,7 @@
 using JsonPatch.Json.Net.Model.Exceptions;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics.CodeAnalysis;
+using System.Net.NetworkInformation;
 using System.Text;
 
 namespace JsonPatch.Json.Net
@@ -71,6 +72,22 @@ namespace JsonPatch.Json.Net
             }
 
             patchFailReason = null;
+            return true;
+        }
+
+
+        public static bool TryPatch(string sourceObjectJson, string patchJson, [NotNullWhen(true)] out string?  resultJson, [NotNullWhen(false)] out JPatchFailReason? patchFailReason)
+        {
+            var sourceObject = JToken.Parse(sourceObjectJson);
+            var patch = JPatchDocument.Load(patchJson);
+
+            if (!TryPatch(sourceObject, patch, out var resultObject, out patchFailReason))
+            {
+                resultJson = null;
+                return false;
+            }
+
+            resultJson = resultObject.ToString();
             return true;
         }
 
