@@ -1,0 +1,21 @@
+{
+  "comment": "Test A15",
+  "doc": {
+    "/": 9,
+    "~1": 10
+  },
+
+  "patch": [
+    {
+      "op": "test",
+      "path": "/~01",
+      "value": "10"
+    },
+    {
+      "op": "add",
+      "path": "/fail",
+      "value": "fail"
+    }
+  ],
+  "error": "Value found at path, but does not match provided value."
+}

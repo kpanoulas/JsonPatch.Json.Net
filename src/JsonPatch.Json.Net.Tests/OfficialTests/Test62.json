@@ -1,0 +1,17 @@
+{
+  "doc": {
+    "foo": 1,
+    "baz": [ { "qux": "hello" } ]
+  },
+  "patch": [
+    {
+      "op": "move",
+      "from": "/foo",
+      "path": "/bar"
+    }
+  ],
+  "expected": {
+    "baz": [ { "qux": "hello" } ],
+    "bar": 1
+  }
+}
