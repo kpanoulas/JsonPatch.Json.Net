@@ -8,8 +8,8 @@ namespace JsonPatch.Json.Net.Tests.Helpers
         public static string LoadJson(string resourceFullPath)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            using (Stream stream = assembly.GetManifestResourceStream(resourceFullPath))
-            using (StreamReader reader = new StreamReader(stream))
+            using (var stream = assembly.GetManifestResourceStream(resourceFullPath))
+            using (StreamReader reader = new StreamReader(stream!))
             {
                 return reader.ReadToEnd();
             }
