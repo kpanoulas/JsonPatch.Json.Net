@@ -24,7 +24,9 @@ jobs:
     - name: Get Build Version
       run: |
         . ./build/GetBuildVersion.ps1
-        $env:VERSION = GetBuildVersion $Env:GITHUB_REF
+        $version = GetBuildVersion $Env:GITHUB_REF
+        Write-Host $version
+        [System.Environment]::SetEnvironmentVariable('VERSION',$version)
       shell: pwsh
         
     - name: Restore dependencies

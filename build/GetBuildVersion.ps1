@@ -3,7 +3,6 @@ Function GetBuildVersion {
         [string]$VersionString
     )
 
-    Write-Host "here"
     # Process through regex
     $VersionString -match "(?<major>\d+)(\.(?<minor>\d+))?(\.(?<patch>\d+))?(\-(?<pre>[0-9A-Za-z\-\.]+))?(\+(?<build>\d+))?" | Out-Null
 
