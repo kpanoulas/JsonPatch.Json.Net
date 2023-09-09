@@ -2,7 +2,6 @@
 using JsonPatch.Json.Net.Model.Exceptions;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics.CodeAnalysis;
-using System.Net.NetworkInformation;
 using System.Text;
 
 namespace JsonPatch.Json.Net
@@ -134,7 +133,6 @@ namespace JsonPatch.Json.Net
             patchFailReason = new JPatchFailReason("Unknown operation type.", string.Empty);
             return false;
         }
-
         private static bool TryExecuteAddOperation(Operation operation, ref JToken sourceObject, [NotNullWhen(false)] out JPatchFailReason? patchFailReason)
         {
             if (operation is null)
