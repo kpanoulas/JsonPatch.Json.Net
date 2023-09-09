@@ -33,13 +33,13 @@ jobs:
       run: dotnet restore
 
     - name: Build
-      run: dotnet build --no-restore /p:Version=${VERSION}
+      run: dotnet build --no-restore /p:Version=$VERSION
 
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
     - name: Package nuget
-      run: dotnet pack /p:Version=${VERSION}
+      run: dotnet pack /p:Version=$VERSION
 
     # - name: Nuget push
     #   run: dotnet nuget push **\*.nupkg -s 'https://api.nuget.org/v3/index.json' -k ${{secrets.NUGET_ORG_JSONPATCH_JSON_NET_API_KEY}}
