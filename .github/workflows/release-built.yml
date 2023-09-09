@@ -24,7 +24,8 @@ jobs:
 
     - name: Get Build Version
       run: |
-        Write-Host $Env:GITHUB_REF
+        . ./build/GetBuildVersion.ps1
+        $env:VERSION = GetBuildVersion $Env:GITHUB_REF
       shell: pwsh
 
     # Import-Module .\build\GetBuildVersion.psm1
