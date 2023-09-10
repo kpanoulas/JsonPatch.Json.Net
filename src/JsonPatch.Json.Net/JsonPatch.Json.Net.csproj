@@ -12,11 +12,11 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/kpanoulas/JsonPatch.Json.Net</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\Jsonata.Json.Net\LICENSE">
+    <None Include="..\..\LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
