@@ -134,8 +134,6 @@ namespace JsonPatch.Json.Net.Tests
                 throw new InvalidOperationException("Test does not have the right structure");
             }
 
-            
-
             if(expectedResult is not null)
             {
                 var patchDocument = JPatchDocument.Load(patchObject.ToString());
