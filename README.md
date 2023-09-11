@@ -32,20 +32,15 @@ This method of execution is the reason why JsonPatch.Json.Net was developed.
 ```
 var originalDocString1 = "{\"baz\": \"qux\",\"foo\": \"bar\"}";
 var originalDocString2 = "{\"baz\": \"qux\",\"foo\": \"bar\"}";
-
 var patchString = "[{\"op\": \"replace\",\"path\": \"/baz\",\"value\": \"boo\"}]";
 
 var patch = JPatchDocument.Load(patchString);
-
-
 var originalDoc1 = JToken.Parse(originalDocString1);
 var originalDoc2 = JToken.Parse(originalDocString2);
-
 
 var result1 = JPatch.Patch(originalDoc1, patch);
 var result2 = JPatch.Patch(originalDoc2, patch);
 ```
-
 
 ### Returning errors inside a JPatchFailReason class.
 With this method, the patch document is only parsed once, and the patched documents are still in JToken form, ready for
